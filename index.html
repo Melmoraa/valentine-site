@@ -1,0 +1,62 @@
+Valentines 
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Be My Valentine? 💘</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffe6f0;
+            padding-top: 100px;
+        }
+
+        h1 {
+            font-size: 40px;
+            color: #ff4d88;
+        }
+
+        button {
+            font-size: 20px;
+            padding: 12px 25px;
+            margin: 15px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #yes {
+            background-color: #ff4d88;
+            color: white;
+        }
+
+        #no {
+            background-color: #cccccc;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Will you be my Valentine? 💖</h1>
+
+<button id="yes" onclick="celebrate()">Yes 🥰</button>
+<button id="no" onmouseover="moveButton()">No 😅</button>
+
+<script>
+function celebrate() {
+    document.body.innerHTML = "<h1>YAYYYYY 😭💖 I LOVE YOU!</h1><p>You just made my day 💕</p>";
+    document.body.style.backgroundColor = "#ffb3d9";
+}
+
+function moveButton() {
+    const button = document.getElementById("no");
+    button.style.position = "absolute";
+    button.style.top = Math.random() * window.innerHeight + "px";
+    button.style.left = Math.random() * window.innerWidth + "px";
+}
+</script>
+
+</body>
+</html>
