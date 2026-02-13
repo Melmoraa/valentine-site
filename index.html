@@ -1,62 +1,115 @@
-Valentines 
+Valentine 
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Be My Valentine? 💘</title>
+    <title>Be My Valentine 💕</title>
     <style>
         body {
             text-align: center;
-            font-family: Arial, sans-serif;
-            background-color: #ffe6f0;
-            padding-top: 100px;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to bottom, #ffe6f5, #ffd6ec);
+            padding-top: 120px;
+            overflow-x: hidden;
         }
 
         h1 {
-            font-size: 40px;
-            color: #ff4d88;
+            font-size: 50px;
+            color: #ff4da6;
+        }
+
+        p {
+            font-size: 20px;
+            width: 70%;
+            margin: auto;
+            margin-top: 15px;
+            color: #663366;
         }
 
         button {
-            font-size: 20px;
-            padding: 12px 25px;
-            margin: 15px;
+            font-size: 18px;
+            padding: 10px 22px;
+            margin: 10px;
             border: none;
-            border-radius: 10px;
+            border-radius: 20px;
             cursor: pointer;
+            background-color: #ff66b2;
+            color: white;
+            transition: 0.3s ease;
         }
 
-        #yes {
-            background-color: #ff4d88;
-            color: white;
+        button:hover {
+            background-color: #ff3385;
         }
 
         #no {
             background-color: #cccccc;
+            color: black;
+        }
+
+        .balloon {
+            position: absolute;
+            bottom: -100px;
+            width: 40px;
+            height: 55px;
+            border-radius: 50%;
+            animation: float 10s infinite ease-in;
+            opacity: 0.8;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-120vh); }
         }
     </style>
 </head>
 
 <body>
 
-<h1>Will you be my Valentine? 💖</h1>
+<h1>Will you be my Valentine 💖</h1>
 
-<button id="yes" onclick="celebrate()">Yes 🥰</button>
-<button id="no" onmouseover="moveButton()">No 😅</button>
+<button onclick="celebrate()">Yes of course 🥰</button>
+<button id="no" onmouseover="moveButton()">No 🙈</button>
 
 <script>
+
 function celebrate() {
-    document.body.innerHTML = "<h1>YAYYYYY 😭💖 I LOVE YOU!</h1><p>You just made my day 💕</p>";
-    document.body.style.backgroundColor = "#ffb3d9";
-}
 
-function moveButton() {
-    const button = document.getElementById("no");
-    button.style.position = "absolute";
-    button.style.top = Math.random() * window.innerHeight + "px";
-    button.style.left = Math.random() * window.innerWidth + "px";
-}
-</script>
+    document.body.innerHTML = "";
 
-</body>
-</html>
+    for (let i = 0; i < 20; i++) {
+        let balloon = document.createElement("div");
+        balloon.className = "balloon";
+        balloon.style.left = Math.random() * window.innerWidth + "px";
+        balloon.style.backgroundColor = i % 2 === 0 ? "#ff66b2" : "#ff99cc";
+        balloon.style.animationDuration = (6 + Math.random() * 4) + "s";
+        document.body.appendChild(balloon);
+    }
+
+    document.body.innerHTML += `
+        <h1>You said yes 💕</h1>
+
+        <p>
+        That means more to me than you probably realize.
+        I did not just send you a simple message.
+        I opened my laptop and created something for you because I wanted you to feel chosen.
+        </p>
+
+        <p>
+        In a world where people send quick texts and move on,
+        I wanted to slow down and build something intentional.
+        Something soft.
+        Something thoughtful.
+        Something that shows I care.
+        </p>
+
+        <p>
+        There is a tech girly out here who used her skills just to make you smile.
+        Someone who thought about you while writing every line.
+        Someone who hopes this moment feels warm and genuine.
+        </p>
+
+        <p>
+        I wanted you to know that you are worth effort.
+        You are worth intention.
+        And
